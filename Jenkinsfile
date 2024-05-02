@@ -17,7 +17,7 @@ pipeline {
                 }
             }
         }
-        stage('Push image to Hub'){
+   /*     stage('Push image to Hub'){
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
@@ -27,7 +27,7 @@ pipeline {
                 }
             }
         }
-     /*   stage('Deploy to k8s'){
+        stage('Deploy to k8s'){
             steps{
                 script{
                     kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
