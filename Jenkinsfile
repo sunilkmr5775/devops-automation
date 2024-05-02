@@ -17,17 +17,17 @@ pipeline {
                 }
             }
         }
-   /*    stage('Push image to Hub'){
+       stage('Push image to Hub'){
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u sunilkmr5775 -p ${ajnabiDost123#}'
+                   sh 'docker login -u sunilkmr5775 -p ${dockerhubpwd#}'
                    }
                    sh 'docker push sunilkmr5775/devops-integration'
                 }
             }
         }
-        stage('Deploy to k8s'){
+      /* stage('Deploy to k8s'){
             steps{
                 script{
                     kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
