@@ -1,4 +1,3 @@
-/*
 pipeline {
     agent any
     tools{
@@ -7,8 +6,7 @@ pipeline {
     stages{
         stage('Build Maven'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*//*
-main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Java-Techie-jt/devops-automation']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Java-Techie-jt/devops-automation']]])
                 sh 'mvn clean install'
             }
         }
@@ -38,4 +36,4 @@ main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Java-Tech
             }
         }
     }
-} */
+}
